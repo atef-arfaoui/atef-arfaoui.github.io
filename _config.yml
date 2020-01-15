@@ -1,18 +1,18 @@
 # Site settings
-title: Jekyll-Uno
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll'
-url: 'http://joshgerdes.com/jekyll-uno'
+title: Atef Arfaoui 
+description: 'Personal Website and Blog'
+url: 'https://atef.site'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
 # disqus_shortname: 'your-disqus-name'
 
 author:
-  name: 'Josh Gerdes'
-  email: josh@joshgerdes.com
-  twitter_username: joshgerdes
-  facebook_username: joshgerdes
-  github_username:  joshgerdes
-  linkedin_username:  joshgerdes
+  name: 'Atef Arfaoui'
+  email: arfatef@gmail.com
+  twitter_username: ArfaouiAtef
+  # facebook_username: joshgerdes
+  github_username:  arfaoui47
+  linkedin_username:  atefarfaoui
 
 defaults:
   -

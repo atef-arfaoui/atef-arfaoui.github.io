@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <meta name="robots" content="noindex">
-  
 
-  <title>Categories</title>
-  <meta name="description" content="Personal Website and Blog">
+  <title>Post 1</title>
+  <meta name="description" content="Post 1
+
+">
   <meta name="author" content="Atef Arfaoui">
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
@@ -18,16 +18,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Categories">
-  <meta name="twitter:description" content="Personal Website and Blog">
+  <meta name="twitter:title" content="Post 1">
+  <meta name="twitter:description" content="Post 1
+
+">
   
   <meta name="twitter:creator" content="ArfaouiAtef">
   
   <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Categories">
-  <meta property="og:description" content="Personal Website and Blog">
+  <meta property="og:title" content="Post 1">
+  <meta property="og:description" content="Post 1
+
+">
   <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
 
   <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
@@ -51,7 +55,7 @@
   <meta name="theme-color" content="#ffffff">
   
   <link rel="stylesheet" href="/css/main.css?1579047685667926501">
-  <link rel="canonical" href="http://localhost:4000/categories/">
+  <link rel="canonical" href="http://localhost:4000/2019/welcome-to-jekyll/">
   <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
 </head>
 
@@ -152,31 +156,35 @@
 
     <div class="content-wrapper">
       <div class="content-wrapper__inner">
-        <h2>Categories:</h2>
-<div class="categories"> 
- 
-  <a href="#ruby">ruby</a>
-
-</div>
-
-<!-- iterate through all categories on the site --> 
- 
-  <!-- for each tag, create an anchor by using the tag name as an id --> 
-  <div id="ruby">  
-    <h3> ruby </h3>  <!-- for create a heading --> 
-
-    <ul> <!-- create the list of posts -->
-      <!-- iterate through all the posts on the site --> 
-       
-        <!-- list only those which contain the current tag --> 
-         
-            <li>
-              <a href="/2019/welcome-to-jekyll/">Post 1</a>
-            </li>
-        
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2019-01-15 16:04" class="post-meta__date date">15 Jan 2019</time>
       
-    </ul>
-  </div>
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#ruby">ruby</a></span>
+      
+    </div>
+    <h1 class="post-title">Post 1</h1>
+  </header>
+
+  <section class="post">
+    <p>Post 1</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre></div></div>
+
+<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
+
+
+  </section>
+  
+</article>
+
+
 
       </div>
 
