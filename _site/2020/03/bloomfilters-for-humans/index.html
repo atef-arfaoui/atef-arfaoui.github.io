@@ -6,8 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
 
-  <title>Post 1</title>
-  <meta name="description" content="Post 1
+  <title>Bloom filters for Humans</title>
+  <meta name="description" content="
+My story with Bloom filters started back in 2018, when our CTO reached out and pointed to this data structure that could be used for anonymizing stored PII data in our servers (preparing for GDPR migration). To fully understand, I decided to write from scratch. If you are planning to google “bloom filter” just hold a second and follow me along. 
+But in first place, what is a Bloom filter ?
 
 ">
   <meta name="author" content="Atef Arfaoui">
@@ -18,8 +20,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Post 1">
-  <meta name="twitter:description" content="Post 1
+  <meta name="twitter:title" content="Bloom filters for Humans">
+  <meta name="twitter:description" content="
+My story with Bloom filters started back in 2018, when our CTO reached out and pointed to this data structure that could be used for anonymizing stored PII data in our servers (preparing for GDPR migration). To fully understand, I decided to write from scratch. If you are planning to google “bloom filter” just hold a second and follow me along. 
+But in first place, what is a Bloom filter ?
 
 ">
   
@@ -28,8 +32,10 @@
   <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
 
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Post 1">
-  <meta property="og:description" content="Post 1
+  <meta property="og:title" content="Bloom filters for Humans">
+  <meta property="og:description" content="
+My story with Bloom filters started back in 2018, when our CTO reached out and pointed to this data structure that could be used for anonymizing stored PII data in our servers (preparing for GDPR migration). To fully understand, I decided to write from scratch. If you are planning to google “bloom filter” just hold a second and follow me along. 
+But in first place, what is a Bloom filter ?
 
 ">
   <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
@@ -54,8 +60,8 @@
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1579047685667926501">
-  <link rel="canonical" href="http://localhost:4000/2019/welcome-to-jekyll/">
+  <link rel="stylesheet" href="/css/main.css?1583966341987270453">
+  <link rel="canonical" href="http://localhost:4000/2020/03/bloomfilters-for-humans/">
   <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
 </head>
 
@@ -159,25 +165,40 @@
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2019-01-15 16:04" class="post-meta__date date">15 Jan 2019</time>
+      <time datetime="2020-03-08 00:04" class="post-meta__date date">8 Mar 2020</time>
       
-      &#8226; <span class="post-meta__tags">on <a href="/tags/#ruby">ruby</a></span>
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#data_structure">data_structure</a></span>
       
     </div>
-    <h1 class="post-title">Post 1</h1>
+    <h1 class="post-title">Bloom filters for Humans</h1>
   </header>
 
   <section class="post">
-    <p>Post 1</p>
+    <p><img src="/images/bloom_intro.jpg" alt="Bloom filter" />
+My story with Bloom filters started back in 2018, when our CTO reached out and pointed to this data structure that could be used for anonymizing stored PII data in our servers (preparing for GDPR migration). To fully understand, I decided to write from scratch. If you are planning to google “bloom filter” just hold a second and follow me along. 
+But in first place, <strong><em>what is a Bloom filter ?</em></strong></p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</code></pre></div></div>
+<p>A Bloom Filer is a <strong>probablistic</strong> data structure which is used to check the existance of an element in set. 
+It mainly used for its <strong>space effeciancy</strong> and the price paid for that is <strong>accucrancy</strong> -&gt; that’s why it’s called probablictic data structure.
+In other words, there is the possibility for false positive values (BF claims that the element exists in the set but it’s not).</p>
 
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://github.com/jekyll/jekyll-help">Jekyll’s dedicated Help repository</a>.</p>
+<p>To resume that, there are two cases when checking the exsitance of an element:</p>
+<ol>
+  <li>Element is definiely not in set.</li>
+  <li>Maybe in set (possibily of False positives).</li>
+</ol>
+
+<p>Bloom filter representation is <strong>one demension array initiated with zeros</strong> (length is <strong><em>m</em></strong>).
+To seed this array you need to use hash functions. We can use more that one hash function (number of hash functions is <strong><em>k</em></strong>). Hashed input will mark ones in this initiated array.</p>
+
+<p><img src="/images/Bloom_filter.svg.png" alt="Bloom filter" />
+An example of a Bloom filter, representing the set {x, y, z}. The colored arrows show the positions in the bit array that each set element is mapped to. The element w is not in the set {x, y, z}, because it hashes to one bit-array position containing 0.</p>
+
+<p>For this figure:</p>
+<ul>
+  <li>m = 18</li>
+  <li>k = 3</li>
+</ul>
 
 
   </section>
@@ -193,7 +214,7 @@
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1579047685667926501"></script>
+<script type="text/javascript" src="/js/main.js?1583966341987270453"></script>
 
 
     </div>
