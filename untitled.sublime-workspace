@@ -1,0 +1,536 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sc",
+				"schedule_end\tstatement"
+			],
+			[
+				"sche",
+				"schedule_end\tstatement"
+			],
+			[
+				"ST",
+				"start\tstatement"
+			],
+			[
+				"SCH",
+				"schedule_start\tstatement"
+			],
+			[
+				"e",
+				"end\tstatement"
+			],
+			[
+				"sa",
+				"start\tstatement"
+			],
+			[
+				"re",
+				"return\tkeyword"
+			],
+			[
+				"sch",
+				"schedule_end\tstatement"
+			],
+			[
+				"all",
+				"all_s\tstatement"
+			],
+			[
+				"ope",
+				"opened\tstatement"
+			],
+			[
+				"sta",
+				"p_stack"
+			],
+			[
+				"pr",
+				"p_prime\tstatement"
+			],
+			[
+				"open",
+				"opened\tstatement"
+			],
+			[
+				"p",
+				"p_prime\tstatement"
+			],
+			[
+				"psa",
+				"p_stack\tstatement"
+			],
+			[
+				"in",
+				"input\tfunction"
+			],
+			[
+				"po",
+				"pokemon_app\tmodule"
+			],
+			[
+				"sl",
+				"sleep"
+			],
+			[
+				"atef",
+				"Atef"
+			],
+			[
+				"Slie",
+				"SliceContainElem"
+			],
+			[
+				"min",
+				"min_i"
+			],
+			[
+				"con",
+				"continue"
+			],
+			[
+				"prec",
+				"prec_x"
+			],
+			[
+				"path",
+				"path1"
+			],
+			[
+				"prinl",
+				"Println"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dis",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"linter",
+				"Anaconda: Next lint error"
+			],
+			[
+				"run",
+				"Anaconda: Run Current Test"
+			],
+			[
+				"diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"format",
+				"Anaconda: Autoformat PEP8 Errors"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ru",
+				"Build With: Go - Run"
+			],
+			[
+				"disa",
+				"Anaconda: Disable linting on this file"
+			],
+			[
+				"lint",
+				"Package Control: Install Package"
+			],
+			[
+				"go run",
+				"Build With: Go - Run"
+			],
+			[
+				"go",
+				"Gofmt: Format this file"
+			],
+			[
+				"go bui",
+				"Build With: Go - Run"
+			],
+			[
+				"go get",
+				"Go: Get"
+			],
+			[
+				"run ",
+				"Anaconda: Run Current Test"
+			],
+			[
+				"build",
+				"Build: Cancel"
+			],
+			[
+				"go tes",
+				"Build With: Go - Test"
+			],
+			[
+				"go ",
+				"Go: Open Terminal"
+			],
+			[
+				"instla",
+				"Package Control: Install Package"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"vintage",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io"
+	],
+	"file_history":
+	[
+		"/home/atef/Downloads/Attempt 1.txt",
+		"/home/atef/Desktop/codejam/challlenge1/Vestigium.py",
+		"/home/atef/Desktop/codejam/depth.py",
+		"/home/atef/Desktop/codejam/challenge2/depth.py",
+		"/home/atef/Desktop/codejam/challenge2/input.txt",
+		"/home/atef/Desktop/articles/bloomfilters/bloomfilters.txt",
+		"/home/atef/Desktop/codejam/input.txt",
+		"/home/atef/Desktop/codejam/challlenge1/input.txt",
+		"/home/atef/Downloads/jwasham-code-catalog-python-c8645a1/catalog/extra/tic_tac_toe.py",
+		"/home/atef/Downloads/jwasham-computer-science-flash-cards-4c7223c/Dockerfile",
+		"/home/atef/Desktop/articles/bloomfilters.txt",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_api/pokemon_app/migrations/__init__.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_api/pokemon_app/settings.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_api/pokemon_app/management/__init__.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_api/pokemon_app/management/commands/__init__.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/stubs/README.md",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/scripts/bootstrapit_update.sh",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/__init__.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/__main__.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/bootsrapit.sh",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/requirements/pypi.txt",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/api.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/views.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/urls.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/README.md",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_api/pokemon_app/models.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/asgi.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/models.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/settings.py",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/Data/pokemon.csv",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/docker_base.Dockerfile",
+		"/home/atef/Desktop/job_challenges/professor-oaks-assistant-hxffio/.gitlab-ci.yml",
+		"/home/atef/Desktop/job_challenges/django-test-task/foo/urls.py",
+		"/home/atef/Downloads/2-eme-fois.txt",
+		"/home/atef/Downloads/text-file-to-finish.txt",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2_part1.go",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2_part1.py",
+		"/home/atef/Desktop/advent_of_code_2019/day3/3_part2.go",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2_part2.go",
+		"/home/atef/Desktop/advent_of_code_2019/day3/input.txt",
+		"/home/atef/Desktop/advent_of_code_2019/day3/3.go",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2.go",
+		"/home/atef/Desktop/advent_of_code_2019/day3/input_test.txt",
+		"/home/atef/Desktop/advent_of_code_2019/day2/input.txt",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2_part2.py",
+		"/home/atef/go/src/go_by_example/for_loops.go",
+		"/home/atef/Desktop/advent_of_code_2019/day2/2.py",
+		"/home/atef/Desktop/advent_of_code_2019/day2/input_test.txt",
+		"/home/atef/Desktop/advent_of_code_2019/day2/res",
+		"/home/atef/Desktop/advent_of_code_2019/day1/1.py",
+		"/home/atef/go/src/go_by_example/arrays.go",
+		"/home/atef/Desktop/advent_of_code_2019/day1/1.go",
+		"/home/atef/Desktop/advent_of_code_2019/day1/input.txt",
+		"/home/atef/Desktop/advant_of_code/1.py",
+		"/home/atef/Desktop/advent_of_code_2019/1.go",
+		"/home/atef/go/src/go_by_example/closures.go",
+		"/home/atef/go/src/go_by_example/values.go",
+		"/home/atef/go/src/go_by_example/varibales.go",
+		"/home/atef/go/src/go_by_example/constants.go",
+		"/home/atef/go/src/go_by_example",
+		"/home/atef/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/atef/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/atef/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/atef/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 64.0
+	},
+	"find_in_files":
+	{
+		"height": 144.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 64.0
+	},
+	"input":
+	{
+		"height": 60.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.browse":
+	{
+		"height": 112.0
+	},
+	"output.exec":
+	{
+		"height": 112.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gofmt":
+	{
+		"height": 0.0
+	},
+	"output.golang_build":
+	{
+		"height": 188.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 104.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"re",
+				"README.md"
+			],
+			[
+				"url",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/urls.py"
+			],
+			[
+				"settin",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/settings.py"
+			],
+			[
+				"view",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/views.py"
+			],
+			[
+				"mode",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/models.py"
+			],
+			[
+				"",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/views.py"
+			],
+			[
+				"u",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/urls.py"
+			],
+			[
+				"api",
+				"src/technical_challlenge_teleclinic/pokemon_app/pokemon_app/api.py"
+			],
+			[
+				"dis",
+				"docker_base.Dockerfile"
+			],
+			[
+				"da",
+				"Data/pokemon.csv"
+			],
+			[
+				"sql",
+				"django-test-task/db.sql"
+			],
+			[
+				"footer",
+				"jekyll-uno-master/_includes/footer.html"
+			],
+			[
+				"readm",
+				"atef-arfaoui.github.io/README.md"
+			],
+			[
+				"3.",
+				"day3/3_part2.go"
+			],
+			[
+				"par",
+				"day2/2_part2.go"
+			],
+			[
+				"go",
+				"day2/2_part2.go"
+			],
+			[
+				"2papy",
+				"day2/2_part1.py"
+			],
+			[
+				"go test",
+				"~/Desktop/python_playground/snippets/test.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
