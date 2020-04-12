@@ -1,6 +1,6 @@
 ---
 title:  "Bloom filters for Humans"
-date:   2020-03-07 23:04:23
+date:   2020-04-10 23:04:23
 categories: 
 tags: [data_structure]
 ---
@@ -30,6 +30,51 @@ For this figure:
   * m = 18
   * k = 3
 
+### Bloom Filter in Python
+
+```python
+import mmh3                             # 3rd party library
+
+
+class Bloomfilter:
+
+    def __init__(self, size: int, hash_count: int) -> None:
+        self.size = size                # this is m
+        self.hash_count = hash_count    # this is k
+        self.bitarray = [0] * size      # we initiate the bitarray with 0 values
+
+    def add(self, element: str) -> None:
+        # to add the element to bitarray we use hash function to find the index
+        # of the bitarray that will be set to 1
+
+        for seed in range(self.hash_count):
+            index = mmh3.hash(element, seed) % self.size
+            self.bitarray[index] = 1
+
+    def lookup(self, element: str) -> bool:
+        # for checkin if the element exists in bloomfilter we hash it with same
+        # hash function in add method and we check if all bitarray are set to 1
+        # if not that means element doens't exist.
+        for seed in range(self.hash_count):
+            index = mmh3.hash(element, seed) % self.size
+            if self.bitarray[index] == 0:
+                return False
+        return True 
+
+```
+
+### Usage
+```python
+>>> bloom_filter = Bloomfilter(10, 2)
+>>> print(bloom_filter.bitarray)
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+>>> bloom_filter.add('test')
+>>> print(bloom_filter.bitarray)
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+>>> assert bloom_filter.lookup('test')
+>>> assert not bloom_filter.lookup("does not exist")
+
+```
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll

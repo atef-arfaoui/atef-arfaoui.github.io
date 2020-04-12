@@ -1,0 +1,3 @@
+https://www.jasondavies.com/bloomfilter/
+https://medium.com/better-programming/probabilistic-data-structures-bloom-filter-5374112a7832
+https://llimllib.github.io/bloomfilter-tutorial/

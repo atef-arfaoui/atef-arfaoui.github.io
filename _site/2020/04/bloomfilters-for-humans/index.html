@@ -60,8 +60,8 @@ But in first place, what is a Bloom filter ?
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1586620894899268956">
-  <link rel="canonical" href="http://localhost:4000/2020/03/bloomfilters-for-humans/">
+  <link rel="stylesheet" href="/css/main.css?1586651689914090471">
+  <link rel="canonical" href="http://localhost:4000/2020/04/bloomfilters-for-humans/">
   <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
 </head>
 
@@ -165,7 +165,7 @@ But in first place, what is a Bloom filter ?
         <article class="post-container post-container--single">
   <header class="post-header">
     <div class="post-meta">
-      <time datetime="2020-03-08 00:04" class="post-meta__date date">8 Mar 2020</time>
+      <time datetime="2020-04-11 01:04" class="post-meta__date date">11 Apr 2020</time>
       
       &#8226; <span class="post-meta__tags">on <a href="/tags/#data_structure">data_structure</a></span>
       
@@ -200,6 +200,50 @@ An example of a Bloom filter, representing the set {x, y, z}. The colored arrows
   <li>k = 3</li>
 </ul>
 
+<h3 id="bloom-filter-in-python">Bloom Filter in Python</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mmh3</span>                             <span class="c1"># 3rd party library
+</span>
+
+<span class="k">class</span> <span class="nc">Bloomfilter</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hash_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>                <span class="c1"># this is m
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hash_count</span> <span class="o">=</span> <span class="n">hash_count</span>    <span class="c1"># this is k
+</span>        <span class="bp">self</span><span class="o">.</span><span class="n">bitarray</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">size</span>      <span class="c1"># we initiate the bitarray with 0 values
+</span>
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="c1"># to add the element to bitarray we use hash function to find the index
+</span>        <span class="c1"># of the bitarray that will be set to 1
+</span>
+        <span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hash_count</span><span class="p">):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">mmh3</span><span class="o">.</span><span class="nb">hash</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">bitarray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">lookup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="c1"># for checkin if the element exists in bloomfilter we hash it with same
+</span>        <span class="c1"># hash function in add method and we check if all bitarray are set to 1
+</span>        <span class="c1"># if not that means element doens't exist.
+</span>        <span class="k">for</span> <span class="n">seed</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hash_count</span><span class="p">):</span>
+            <span class="n">index</span> <span class="o">=</span> <span class="n">mmh3</span><span class="o">.</span><span class="nb">hash</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="n">seed</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">bitarray</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">return</span> <span class="bp">True</span> 
+
+</code></pre></div></div>
+
+<h3 id="usage">Usage</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="n">bloom_filter</span> <span class="o">=</span> <span class="n">Bloomfilter</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">bloom_filter</span><span class="o">.</span><span class="n">bitarray</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">bloom_filter</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">bloom_filter</span><span class="o">.</span><span class="n">bitarray</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="n">bloom_filter</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s">'test'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">assert</span> <span class="ow">not</span> <span class="n">bloom_filter</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s">"does not exist"</span><span class="p">)</span>
+
+</code></pre></div></div>
+
 
   </section>
   
@@ -214,7 +258,7 @@ An example of a Bloom filter, representing the set {x, y, z}. The colored arrows
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1586620894899268956"></script>
+<script type="text/javascript" src="/js/main.js?1586651689914090471"></script>
 
 
     </div>
