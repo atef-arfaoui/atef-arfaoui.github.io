@@ -73,7 +73,7 @@ class Bloomfilter:
 [0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
 >>> assert bloom_filter.lookup('test')
 >>> assert not bloom_filter.lookup("does not exist")
-
+>>> |
 ```
 
 [jekyll]:      http://jekyllrb.com

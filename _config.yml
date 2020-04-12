@@ -1,10 +1,10 @@
 # Site settings
 title: Atef Arfaoui 
-description: 'Personal Website and Blog'
+description: 'Blog and Personal Website'
 url: 'https://atef.site'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'your-disqus-name'
+# disqus_shortname: 'disqus_Y3X3YeWwol'
 
 author:
   name: 'Atef Arfaoui'
