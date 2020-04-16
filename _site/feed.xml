@@ -5,36 +5,39 @@
     <description>Personal Website and Blog</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 12 Apr 2020 02:38:42 +0200</pubDate>
-    <lastBuildDate>Sun, 12 Apr 2020 02:38:42 +0200</lastBuildDate>
+    <pubDate>Thu, 16 Apr 2020 22:38:11 +0200</pubDate>
+    <lastBuildDate>Thu, 16 Apr 2020 22:38:11 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
-        <title>Bloom filters for Humans</title>
+        <title>Bloom filters for Humans (Draft)</title>
         <description>&lt;p&gt;&lt;img src=&quot;/images/bloom_intro.jpg&quot; alt=&quot;Bloom filter&quot; /&gt;
-My story with Bloom filters started back in 2018, when our CTO reached out and pointed to this data structure that could be used for anonymizing stored PII data in our servers (preparing for GDPR migration). To fully understand, I decided to write from scratch. If you are planning to google “bloom filter” just hold a second and follow me along. 
-But in first place, &lt;strong&gt;&lt;em&gt;what is a Bloom filter ?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+&lt;strong&gt;&lt;em&gt;what is a Bloom filter ?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;A Bloom Filer is a &lt;strong&gt;probablistic&lt;/strong&gt; data structure which is used to check the existance of an element in set. 
-It mainly used for its &lt;strong&gt;space effeciancy&lt;/strong&gt; and the price paid for that is &lt;strong&gt;accucrancy&lt;/strong&gt; -&amp;gt; that’s why it’s called probablictic data structure.
-In other words, there is the possibility for false positive values (BF claims that the element exists in the set but it’s not).&lt;/p&gt;
+&lt;p&gt;A Bloom Filer is a &lt;strong&gt;probablistic&lt;/strong&gt; data structure which is used to check the existance of an element in set.
+It mainly used for its &lt;strong&gt;space effeciancy&lt;/strong&gt;. The price paid for that is &lt;strong&gt;accucrancy&lt;/strong&gt; -&amp;gt; that’s why it’s called probablictic data structure.
+In other words, there is the possibility for &lt;strong&gt;false positive&lt;/strong&gt; values (BF claims that the element exists in the set but in realty it’s not).&lt;/p&gt;
 
 &lt;p&gt;To resume that, there are two cases when checking the exsitance of an element:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;Element is definiely not in set.&lt;/li&gt;
-  &lt;li&gt;Maybe in set (possibily of False positives).&lt;/li&gt;
+  &lt;li&gt;Element is definiely &lt;strong&gt;&lt;em&gt;not&lt;/em&gt;&lt;/strong&gt; in set.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Maybe&lt;/em&gt;&lt;/strong&gt; in set (possibily of False positives).&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Bloom filter representation is &lt;strong&gt;one demension array initiated with zeros&lt;/strong&gt; (length is &lt;strong&gt;&lt;em&gt;m&lt;/em&gt;&lt;/strong&gt;).
-To seed this array you need to use hash functions. We can use more that one hash function (number of hash functions is &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt;). Hashed input will mark ones in this initiated array.&lt;/p&gt;
+To seed this array we need to use hash functions. We can use more that one hash function (number of hash functions is &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt;). Hashed input will mark ones in this initiated array.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/images/Bloom_filter.svg.png&quot; alt=&quot;Bloom filter&quot; /&gt;
-An example of a Bloom filter, representing the set {x, y, z}. The colored arrows show the positions in the bit array that each set element is mapped to. The element w is not in the set {x, y, z}, because it hashes to one bit-array position containing 0.&lt;/p&gt;
+&lt;p&gt;The bloom filter essentially consists of a bit-vector or bit-array(a list containing only either 0 or 1-bit value) of length &lt;strong&gt;&lt;em&gt;m&lt;/em&gt;&lt;/strong&gt;). Initially all values are set to zero, as shown below.
+&lt;img src=&quot;/images/empty_bf.png&quot; alt=&quot;Empty Bloom Filter&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;For this figure:&lt;/p&gt;
+&lt;p&gt;To add an item to the bloom filter, we feed it to &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt; different hash functions and set the bits to one at the resulting positions. As you can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the bloom filter, we would use multiple hash functions, which would give us multiple indexes.
+&lt;img src=&quot;/images/test_added_to_bf.png&quot; alt=&quot;Seeded Bloom Filter&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the above example:&lt;/p&gt;
 &lt;ul&gt;
-  &lt;li&gt;m = 18&lt;/li&gt;
-  &lt;li&gt;k = 3&lt;/li&gt;
+  &lt;li&gt;m = 10  -&amp;gt; &lt;strong&gt;lenght of the bitarray&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;k = 2    -&amp;gt; &lt;strong&gt;number of hash functions&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;bloom-filter-in-python&quot;&gt;Bloom Filter in Python&lt;/h3&gt;
@@ -80,6 +83,21 @@ An example of a Bloom filter, representing the set {x, y, z}. The colored arrows
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bloom_filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lookup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;does not exist&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The classic example is using bloom filters to reduce expensive disk (or network) lookups for non-existent keys.&lt;/p&gt;
+
+&lt;p&gt;If the element is not in the bloom filter, then we know for sure we don’t need to perform the expensive lookup. On the other hand, if it is in the bloom filter, we perform the lookup, and we can expect it to fail some proportion of the time (the false positive rate).&lt;/p&gt;
+
+&lt;p&gt;In my use case the main puropose of Using Bloom Filter is not to reduce data size or to perform faster data lookups but to make sure that our company is confirming to GDPR regulation and not storing PII data in our server. Basically, we replaced our raw IP blacklist with Bloom filters. Since IPs are condidered as Personal data (PII) we are no longer storing raw IPs but a representaiton of them in a bitarray. 🧠&lt;/p&gt;
+
+&lt;p&gt;My production implimentaiton is using files to save blacklist. Files are more convinent support to transfer data betweeen servers. There are other solutions like using redis which has its advantage in front of files; like centralized data storage, but it can have other drawbacks like availability and concurrency, and it’s has limitiatoin for quick local development.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The Bloom Filter is a powerful tool for reducing data to single bits what makes it possible to store large amounts of information in only few megabytes. Furthermore, since the bloom filter is basically one binary array, combined with a hash function, the search is in O(1), if hashing is implemented right. That makes it very useful for new IoT devices with small memory amounts, as well as for tiny PC’s like Rasperry PI and alternatives. Bloom filter can also be used for high-load backends, windows in streaming application, caching engines and many more…&lt;/p&gt;
+
+&lt;p&gt;The usage of Bloom Filters has also some limitaion if the filtered data has addtional information.
+for example in my use case, some of the ip blacklist has a score attached to it which tell how dangerous the ip using a range from 0 to 100. So, I come with a “new” data structered to not loose this information; I called it Scores Bloomfilter. Maybe I will write about it in another Blog.. Stay tunned :)&lt;/p&gt;
 
 </description>
         <pubDate>Sat, 11 Apr 2020 01:04:23 +0200</pubDate>

@@ -4,7 +4,7 @@ description: 'Blog and Personal Website'
 url: 'https://atef.site'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
-# disqus_shortname: 'disqus_Y3X3YeWwol'
+# disqus_shortname: 'atef-site'
 
 author:
   name: 'Atef Arfaoui'
@@ -41,3 +41,6 @@ kramdown:
 
 plugins: ['jekyll-paginate']
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+
+layout: default
+comments: true
