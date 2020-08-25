@@ -6,13 +6,12 @@ tags: [data_structure]
 ---
 
 ![Bloom filter](/images/bloom_intro.jpg)
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google "bloom filter" just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what's a Bloom Filter, I decided to write it from scratch. If you are planning to google "bloom filter" just hold on for second and follow me along.
 **_what is a Bloom filter ?_**
 
 
-A Bloom Filer is a **probablistic** data structure which is used to check the existance of an element in set.
-It mainly used for its **space effeciancy**. The price paid for that is **accucrancy** -> that's why it's called probablictic data structure.
-In other words, there is the possibility for **false positive** values (BF claims that the element exists in the set but in realty it's not). 
+A Bloom Filer is a **probablistic** data structure which is used to check the existance of an element in set. It is mainly used for **space effeciancy**. The price paid for that is **accucrancy** -> that's why it's called probablictic data structure.
+In other words, there is the possibility for **false positive** values. BF (Bloom Filter) claims that the element exists in the set but in realty it's not. 
 
 To resume that, there are two cases when checking the exsitance of an element:
   1. Element is definiely **_not_** in set.

@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"has",
+				"hash_count\tparam"
+			],
+			[
 				"sc",
 				"schedule_end\tstatement"
 			],
@@ -107,6 +111,82 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "project_config.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 44,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_posts/2020-03-08-bloomfilters-for-humans.markdown",
+			"settings":
+			{
+				"buffer_size": 6006,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// Your First C++ Program\n\n#include <iostream>\n\nint main() {\n    std::cout << \"Hello World!\";\n    \n    return 0;\n}\n",
+			"file": "_posts/test.cpp",
+			"file_size": 109,
+			"file_write_time": 132322240565236112,
+			"settings":
+			{
+				"buffer_size": 115,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimeLinter-cpplint\n---------------------\n\n  SublimeLinter-cpplint\n  -------------------------------\n  This linter plugin for SublimeLinter provides an interface to cpplint.\n  \n  Please read the installation instructions at:\n  \n  https://github.com/SublimeLinter/SublimeLinter-cpplint\n\n\nCppBuilder\n----------\n\n  Note: as a university student, work on this project will be slow, sorry.\n  \n  Welcome\n  ======\n  This is my fist plugin so there might be bugs :)\n  I have only tested this one windows thus far, Linux and Mac come later.\n  \n  This is a simple plugin that will generate a project folder for you, and will also generate a Makefile to use with GNU Make.\n  It can also Run your project.\n  \n  This a as a very simple project management system, there are bugs, and it can only handle one generated binary file.\n  (Does that even make sense?!)\n  \n  Install\n  ========\n  1. Use Package Control\n      - Search for CppBuilder\n  2. or git clo the rep and copy it to Packages/CppBuilder\n  \n  Use\n  ======\n  Ctrl+Alt+M: While a C++ file is open will run the command on windows, Haven't tested it on Mac or ~~Linux~~ yet...\n  the command will make a Makefile in the same directory of the C++ file.\n  Note: so far I can only mpe and run while in a project, i will add single file compile and run some other time.\n  \n  Project:\n  \n  goto Project > C++ Builder > w C++ Project to create a new projectan Input panel will come up and you can type in the name of your project, Then it will make the list of folders (build, header, obj, src), it will prompt you to agree for each folder, just click Yes to all of them. (This might be removed later.)\n  \n  Keys (While new project is open):\n  \n  1. Ctrl+Alt+N : Generate Makefile (There must be at least one cpp file in your src folder).\n  2. Ctrl+Alt+Z : Build the Project (This will just run make in the folder).\n  3. Ctrl+Alt+C : Build & Run Project (No Input) (Running the project assuming there is no input required from the keyboard, useful for simple stuff).\n  4. Ctrl+Alt+X : Build & Run (Console) (Running the project assuming it requires input, the output from the program is not captured by Sublime text, the Console window will pause).\n  5. Ctrl+Alt+V : Clean Project (Will run make clean).\n  \n  Settings: \n  You have some options that you can change, either per project (I will explain down below) or for single files:\n  \n  \n  If you change the settings in project.sublime-project file, then the settings only apply to that project only, however if you change the CppBuilder.sublime-settings, the changes apply to every file. i.e: a file outside a project.\n  \n  Note: please set the workspace setting before anything else, this is required, for the New C++ Project command to work.\n  \n  Note: For Linux you must also set terminal_emu and terminal_opts for your own linux distro\n  \n  These are the basic settings you can change:\n  \n  //per project settings (can also be set to apply to every file)\n  \n  //library directories (prefixed by -L in Makefile)\n  \"lib_dir\": [\n  \"path/to/some/lib/folder\",\n  \"path/to/someother/lib/folder\"\n  ],\n  \n  //library names used in your project, ORDER matters\n  //(prefixed with -l in the makefile)\n  \"lib_names\": [\n  \"somelibname\",\n  \"anotherlibname\"\n  ],\n  \n  //header directory, .h/hpp files\n  //(for projects this is set to the header folder created with the \n  //New C++ project command, so put your headers there if using a project)\n  \"include_dir\": [\n  \"path/to/header\",\n  \"path/another/header\"\n  ],\n  \n  //where to get the .cpp files\n  //(set to src when in a project)\n  \"src_dir\": \"\",\n  \n  //output folders\n  //the name of the file to generate (the final executable )\n  //(for project named after the project)\n  \"main_file\": \"\",\n  \n  //where to put the intermediate .o files\n  //this is to make sure we don't recompile everything from scratch\n  //if not needed\n  //(set to obj folder while in project)\n  \"obj_dir\": \"\",\n  \n  //where to build the final executable\n  //by default is in the same folder for a single .CPP file\n  //(for project set to the build folder)\n  \"build_dir\": \"\",\n  \n  \n  //compiler\n  \"cc\": \"g++\",\n  \n  //what to remove, example 'obj\\*.o'\n  //this just a simple way to clean up, you can add\n  //more as required, remember, only supply what to delete\n  //the delete command is added internally based on platform\n  \"clean\" : [], \n  \n  //============================================================\n  \n  //Linux Specific options:\n  \n  //command that opens a new terminal\n  \"terminal_emu\":\"x-terminal-emulator\",\n  \"terminal_opts\": [\n      \"-x\"\n  ],\n  \n  //============================================================\n  \n  //additional flags for the compiler\n  \"additional_flags\": [\n      \"Wall\",\n      \"std=gnu++11\",\n      \"D__USE_MINGW_ANSI_STDIO=1\"\n  ],\n  \n  //Default Project Settings\n  //this should only be set by using CppBuilder.sublime-settings\n  //this is where all your Projects are made\n  //SET THIS or the plugin will not work, or it can even mess up stuff\n  \"workspace_dir\":\"\"\n  \n  Goals\n  - Running the Project after compiling. (Done)\n  - Building & Running a single C++ file. (New)\n  - Just getting peole to use it and work out any bugs found ;)\n  \n  \n  Update History\n  - v 0.2.3 (New)\n      - Now should support Linux.\n      - Removed a few commands and Keyboard shortcuts as the where not required.\n  \n  Update History\n  - v 0.2.00 (Old)\n      - Added Project Creation.\n      - Added Project Building.\n      - Added Project Execution.\n      - This could be the first version that has some uses. :D ( I will build it as I go along)\n  \n  - v 0.0.11\n      -   lost local git folder, rebuild from scratch \n      -   added folder management.\n  \n  - v 0.0.8  \n  \n      - Added a simple message test when installing package.  \n      - Added an option to make a folder for the object files.  \n      - fixed some bugs.  \n      - should be able to make simple makefiles without errors.  \n  \n  \n  - v 0.0.4\n      - Added a Default main_file name if one is not give. (output.exe on windows, ouput.out on others)\n      - removed some code, and it looks cleaner now.\n      - Tested on Mac & Linux...working but fine.\n",
+			"settings":
+			{
+				"buffer_size": 6181,
+				"line_ending": "Unix",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 878,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_site/index.html",
+			"settings":
+			{
+				"buffer_size": 7827,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources.txt",
+			"settings":
+			{
+				"buffer_size": 184,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -140,6 +220,26 @@
 		"selected_items":
 		[
 			[
+				"build",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"INS",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
 				"dis",
 				"Anaconda: Disable linting on this file"
 			],
@@ -162,10 +262,6 @@
 			[
 				"format",
 				"Anaconda: Autoformat PEP8 Errors"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"ru",
@@ -200,10 +296,6 @@
 				"Anaconda: Run Current Test"
 			],
 			[
-				"build",
-				"Build: Cancel"
-			],
-			[
 				"go tes",
 				"Build With: Go - Test"
 			],
@@ -222,10 +314,6 @@
 			[
 				"vintage",
 				"Package Control: Advanced Install Package"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"Package Control: install",
@@ -256,10 +344,20 @@
 	},
 	"expanded_folders":
 	[
-		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io"
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_posts",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_site",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_site/2020",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_site/2020/04",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_site/2020/04/bloomfilters-for-humans",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/images"
 	],
 	"file_history":
 	[
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_posts/test",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/_site/2020/04/bloomfilters-for-humans/index.html",
+		"/home/atef/]",
+		"/home/atef/Desktop/atef_site/atef-arfaoui.github.io/bloom_simple.py",
 		"/home/atef/Downloads/Attempt 1.txt",
 		"/home/atef/Desktop/codejam/challlenge1/Vestigium.py",
 		"/home/atef/Desktop/codejam/depth.py",
@@ -327,7 +425,7 @@
 	],
 	"find":
 	{
-		"height": 64.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -341,6 +439,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" += ",
+			"r",
+			"0:3",
+			"comment"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -358,18 +460,263 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "project_config.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/zzz A File Icon zzz/aliases/JSON (Sublime).sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 44,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_posts/2020-03-08-bloomfilters-for-humans.markdown",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6006,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								624,
+								624
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.go"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								}
+							],
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_posts/test.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 115,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6181,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								280
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 222.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "_config.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 878,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "_site/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7751,
+								7751
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 608.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "resources.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 64.0
+		"height": 27.0
 	},
 	"input":
 	{
-		"height": 60.0
+		"height": 61.0
 	},
 	"layout":
 	{
@@ -418,7 +765,7 @@
 	"project": "untitled.sublime-project",
 	"replace":
 	{
-		"height": 104.0
+		"height": 50.0
 	},
 	"save_all_on_build": false,
 	"select_file":

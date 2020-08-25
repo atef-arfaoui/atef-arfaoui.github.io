@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Atef Arfaoui</title>
-    <description>Personal Website and Blog</description>
+    <description>Blog and Personal Website</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 16 Apr 2020 22:38:11 +0200</pubDate>
-    <lastBuildDate>Thu, 16 Apr 2020 22:38:11 +0200</lastBuildDate>
+    <pubDate>Tue, 25 Aug 2020 13:59:41 +0200</pubDate>
+    <lastBuildDate>Tue, 25 Aug 2020 13:59:41 +0200</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
         <title>Bloom filters for Humans (Draft)</title>
         <description>&lt;p&gt;&lt;img src=&quot;/images/bloom_intro.jpg&quot; alt=&quot;Bloom filter&quot; /&gt;
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what’s a Bloom Filter, I decided to write it from scratch. If you are planning to google “bloom filter” just hold on for second and follow me along.
 &lt;strong&gt;&lt;em&gt;what is a Bloom filter ?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;A Bloom Filer is a &lt;strong&gt;probablistic&lt;/strong&gt; data structure which is used to check the existance of an element in set.
-It mainly used for its &lt;strong&gt;space effeciancy&lt;/strong&gt;. The price paid for that is &lt;strong&gt;accucrancy&lt;/strong&gt; -&amp;gt; that’s why it’s called probablictic data structure.
-In other words, there is the possibility for &lt;strong&gt;false positive&lt;/strong&gt; values (BF claims that the element exists in the set but in realty it’s not).&lt;/p&gt;
+&lt;p&gt;A Bloom Filer is a &lt;strong&gt;probablistic&lt;/strong&gt; data structure which is used to check the existance of an element in set. It is mainly used for &lt;strong&gt;space effeciancy&lt;/strong&gt;. The price paid for that is &lt;strong&gt;accucrancy&lt;/strong&gt; -&amp;gt; that’s why it’s called probablictic data structure.
+In other words, there is the possibility for &lt;strong&gt;false positive&lt;/strong&gt; values. BF (Bloom Filter) claims that the element exists in the set but in realty it’s not.&lt;/p&gt;
 
 &lt;p&gt;To resume that, there are two cases when checking the exsitance of an element:&lt;/p&gt;
 &lt;ol&gt;

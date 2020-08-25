@@ -8,7 +8,7 @@
 
   <title>Bloom filters for Humans (Draft)</title>
   <meta name="description" content="
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what’s a Bloom Filter, I decided to write it from scratch. If you are planning to google “bloom filter” just hold on for second and follow me along.
 what is a Bloom filter ?
 
 ">
@@ -22,7 +22,7 @@ what is a Bloom filter ?
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bloom filters for Humans (Draft)">
   <meta name="twitter:description" content="
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what’s a Bloom Filter, I decided to write it from scratch. If you are planning to google “bloom filter” just hold on for second and follow me along.
 what is a Bloom filter ?
 
 ">
@@ -34,7 +34,7 @@ what is a Bloom filter ?
   <meta property="og:type" content="article">
   <meta property="og:title" content="Bloom filters for Humans (Draft)">
   <meta property="og:description" content="
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what’s a Bloom Filter, I decided to write it from scratch. If you are planning to google “bloom filter” just hold on for second and follow me along.
 what is a Bloom filter ?
 
 ">
@@ -60,7 +60,7 @@ what is a Bloom filter ?
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1587069491447998102">
+  <link rel="stylesheet" href="/css/main.css?1598356781289895814">
   <link rel="canonical" href="http://localhost:4000/2020/04/bloomfilters-for-humans/">
   <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
 </head>
@@ -82,7 +82,7 @@ what is a Bloom filter ?
           <h1 class="panel-cover__title panel-title">Atef Arfaoui</h1>
         </a>
         <hr class="panel-cover__divider">
-        <p class="panel-cover__description">Personal Website and Blog</p>
+        <p class="panel-cover__description">Blog and Personal Website</p>
         <hr class="panel-cover__divider panel-cover__divider--secondary">
 
         <div class="navigation-wrapper">
@@ -175,12 +175,11 @@ what is a Bloom filter ?
 
   <section class="post">
     <p><img src="/images/bloom_intro.jpg" alt="Bloom filter" />
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing stored personal data (PII) in our servers. We needed to prepare ourselves for GDPR migration. To fully understand it, I decided to write a Bloom Filter from scratch. If you are planning to google “bloom filter” just hold for second and follow me along.
+My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what’s a Bloom Filter, I decided to write it from scratch. If you are planning to google “bloom filter” just hold on for second and follow me along.
 <strong><em>what is a Bloom filter ?</em></strong></p>
 
-<p>A Bloom Filer is a <strong>probablistic</strong> data structure which is used to check the existance of an element in set.
-It mainly used for its <strong>space effeciancy</strong>. The price paid for that is <strong>accucrancy</strong> -&gt; that’s why it’s called probablictic data structure.
-In other words, there is the possibility for <strong>false positive</strong> values (BF claims that the element exists in the set but in realty it’s not).</p>
+<p>A Bloom Filer is a <strong>probablistic</strong> data structure which is used to check the existance of an element in set. It is mainly used for <strong>space effeciancy</strong>. The price paid for that is <strong>accucrancy</strong> -&gt; that’s why it’s called probablictic data structure.
+In other words, there is the possibility for <strong>false positive</strong> values. BF (Bloom Filter) claims that the element exists in the set but in realty it’s not.</p>
 
 <p>To resume that, there are two cases when checking the exsitance of an element:</p>
 <ol>
@@ -276,7 +275,7 @@ for example in my use case, some of the ip blacklist has a score attached to it 
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1587069491447998102"></script>
+<script type="text/javascript" src="/js/main.js?1598356781289895814"></script>
 
 
     </div>
