@@ -1,11 +1,11 @@
 ---
 title:  "Urban Kitchen"
-date:   2020-08-10 23:04:23
+date:   2020-08-24 23:04:23
 categories: 
 tags: [food]
 ---
 
-![Bloom filter](/docs/doc.pdf)
+[get the PDF](/docs/doc.pdf) 
 
 [jekyll]:      http://jekyllrb.com
 [jekyll-gh]:   https://github.com/jekyll/jekyll
