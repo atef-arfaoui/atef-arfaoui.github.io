@@ -6,32 +6,39 @@ tags: [data_structure]
 ---
 
 ![Bloom filter](/images/bloom_intro.jpg)
-My story with Bloom filters started back in 2018 or 2017 .. not quite sure. Our team manager reached out and pointed to this data structure that could be used for anonymizing personal data (PII) stored in our servers. We needed to prepare ourselves for GDPR migration. To fully understand what's a Bloom Filter, I decided to write it from scratch. If you are planning to google "bloom filter" just hold on for second and follow me along.
-**_what is a Bloom filter ?_**
+My first encounter with Bloom Filter was in 2018. We were preparing for GDPR migration. So, our team manager suggested that we could use this data structure to anonymize personal data (PII) stored in our servers. To fully understand what's a Bloom Filter, I decided to write it from scratch.
+**_So what is a Bloom filter in first place?_**
 
 
-A Bloom Filer is a **probablistic** data structure which is used to check the existance of an element in set. It is mainly used for **space effeciancy**. The price paid for that is **accucrancy** -> that's why it's called probablictic data structure.
-In other words, there is the possibility for **false positive** values. BF (Bloom Filter) claims that the element exists in the set but in realty it's not. 
+A Bloom Filter is a **probabilistic** data structure that is used to check the existence of an element in a set. It is mainly used for **space efficiency**. The price paid for that is **accuracy** -> that's why it's called probabilistic data structure.
+In other words, there is the possibility for **false positive** values. The Bloom Filter claims that the element exists in the set but in realty it's not. 
 
-To resume that, there are two cases when checking the exsitance of an element:
-  1. Element is definiely **_not_** in set.
-  2. **_Maybe_** in set (possibily of False positives).
+To resume that, there are two cases when checking the existence of an element:
+  1. Element is definitely **_not_** in the set.
+  2. Element is **_Maybe_** in the set (possibility of False positives).
+
+**Note:** _If the element is not on the set, the Bloom Filter will never claim that it exists (impossible to have false negative)._
+
+Bloom filter representation is **one dimensional array initiated with zeros** (length is **_m_**).
 
 
-Bloom filter representation is **one demension array initiated with zeros** (length is **_m_**).
-To seed this array we need to use hash functions. We can use more that one hash function (number of hash functions is **_k_**). Hashed input will mark ones in this initiated array.
+There are two steps to use the Bloom filter:
+  1. Adding elements to the Bloom filter.
+  2. Checking if an element exists in the Bloom filter. 
+
+When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more that one hash function (number of hash functions is **_k_**). Hashed input will mark ones in this initiated array.
 
 
-The bloom filter essentially consists of a bit-vector or bit-array(a list containing only either 0 or 1-bit value) of length **_m_**). Initially all values are set to zero, as shown below.
+The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value) of length **_m_**). Initially all values are set to zero, as shown below.
 ![Empty Bloom Filter](/images/empty_bf.png)
 
-To add an item to the bloom filter, we feed it to **_k_** different hash functions and set the bits to one at the resulting positions. As you can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the bloom filter, we would use multiple hash functions, which would give us multiple indexes.
+To add an item to the bloom filter, we feed it to **_k_** different hash functions and set the bits to one at the resulting positions. As we can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the Bloom filter, we would use multiple hash functions, which would give us multiple indexes.
 ![Seeded Bloom Filter](/images/test_added_to_bf.png)
 
 
 In the above example:
-  * m = 10  -> **lenght of the bitarray**
-  * k = 2    -> **number of hash functions**
+  * m = 10 -> **length of the bitarray**
+  * k = 2  -> **number of hash functions**
 
 
 ### Bloom Filter in Python
@@ -43,12 +50,12 @@ import mmh3                             # 3rd party library
 class Bloomfilter:
 
     def __init__(self, size: int, hash_count: int) -> None:
-        self.size = size                # this is m
-        self.hash_count = hash_count    # this is k
-        self.bitarray = [0] * size      # we initiate the bitarray with 0 values
+        self.size = size                # m
+        self.hash_count = hash_count    # k
+        self.bitarray = [0] * size      # We initiate the bitarray with 0 values
 
     def add(self, element: str) -> None:
-        # to add the element to bitarray we use hash function to find the index
+        # To add the element to bitarray we use hash function to find the index
         # of the bitarray that will be set to 1
 
         for seed in range(self.hash_count):
@@ -56,9 +63,9 @@ class Bloomfilter:
             self.bitarray[index] = 1
 
     def lookup(self, element: str) -> bool:
-        # for checkin if the element exists in bloomfilter we hash it with same
+        # For checking the existence in Bloom filter we hash it with same
         # hash function in add method and we check if all bitarray are set to 1
-        # if not that means element doens't exist.
+        # if not that means the element doesn't exist.
         for seed in range(self.hash_count):
             index = mmh3.hash(element, seed) % self.size
             if self.bitarray[index] == 0:
@@ -80,22 +87,23 @@ class Bloomfilter:
 >>> |
 ```
 
-The classic example is using bloom filters to reduce expensive disk (or network) lookups for non-existent keys.
+The classic example is using Bloom filters to reduce expensive disk (or network) lookups for non-existent keys.
 
-If the element is not in the bloom filter, then we know for sure we don't need to perform the expensive lookup. On the other hand, if it is in the bloom filter, we perform the lookup, and we can expect it to fail some proportion of the time (the false positive rate).
+If the element is not in the Bloom filter, then we know for sure we don't need to perform the expensive lookup. On the other hand, if it is in the bloom filter, we perform the lookup, and we can expect it to fail some proportion of the time (the false positive rate).
 
-In my use case the main puropose of Using Bloom Filter is not to reduce data size or to perform faster data lookups but to make sure that our company is confirming to GDPR regulation and not storing PII data in our server. Basically, we replaced our raw IP blacklist with Bloom filters. Since IPs are condidered as Personal data (PII) we are no longer storing raw IPs but a representaiton of them in a bitarray. 🧠
+In our use case the main purpose of using Bloom filter is not to reduce data size or to perform faster data lookups but to make sure that our company is confirming GDPR regulation and not storing PII data in our server. Basically, we replaced our raw IP blacklist with Bloom filters. Since IPs are considered as Personal data (PII) we are no longer storing raw IPs but a representaiton of them in a bitarray.
 
-My production implimentaiton is using files to save blacklist. Files are more convinent support to transfer data betweeen servers. There are other solutions like using redis which has its advantage in front of files; like centralized data storage, but it can have other drawbacks like availability and concurrency, and it's has limitiatoin for quick local development. 
+We were persisting blacklisted IPs in Bloom filter to disk, because files are more convenient support to transfer data between servers. There are other solutions like using redis which has its advantage in front of files; like centralized data storage, but it can have other drawbacks like availability and concurrency, and it has limitations for quick local development. 
 
 
 ## Conclusion
 
-The Bloom Filter is a powerful tool for reducing data to single bits what makes it possible to store large amounts of information in only few megabytes. Furthermore, since the bloom filter is basically one binary array, combined with a hash function, the search is in O(1), if hashing is implemented right. That makes it very useful for new IoT devices with small memory amounts, as well as for tiny PC’s like Rasperry PI and alternatives. Bloom filter can also be used for high-load backends, windows in streaming application, caching engines and many more...
+The Bloom Filter is a powerful tool for reducing data to single bits which makes it possible to store large amounts of information in only a few megabytes. Furthermore, since the bloom filter is basically one binary array, combined with a hash function, the search is in O(1), if hashing is implemented right. That makes it very useful for new IoT devices with small memory amounts, as well as for tiny PC’s like Raspberry PI and alternatives. Bloom filters can also be used for high-load backends, in streaming applications, caching engines and many more...
 
-The usage of Bloom Filters has also some limitaion if the filtered data has addtional information.
-for example in my use case, some of the ip blacklist has a score attached to it which tell how dangerous the ip using a range from 0 to 100. So, I come with a "new" data structered to not loose this information; I called it Scores Bloomfilter. Maybe I will write about it in another Blog.. Stay tunned :) 
+The usage of Bloom Filters has also some limitations if the filtered data has additional information.
+for example in our use case, the IP blacklist has originally a score attached to it which tells how much dangerous the IP is; using a score from 0 to 100. So, I came up with a "new" data structured to not lose this information; I called it the Scored Bloom filter. I wanted to keep this post as simple as possible so probably I will write about in another one. 
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+
+##### Other Resources:
+1. [Bloom Filter Playground](http://llimllib.github.io/bloomfilter-tutorial/)
+
