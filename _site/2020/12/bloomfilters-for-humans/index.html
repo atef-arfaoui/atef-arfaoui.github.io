@@ -60,7 +60,7 @@ So what is a Bloom filter in first place?
   <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
   
-  <link rel="stylesheet" href="/css/main.css?1609190698942148964">
+  <link rel="stylesheet" href="/css/main.css?1609193818657537380">
   <link rel="canonical" href="http://localhost:4000/2020/12/bloomfilters-for-humans/">
   <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
 </head>
@@ -197,9 +197,9 @@ In other words, there is the possibility for <strong>false positive</strong> val
   <li>Checking if an element exists in the Bloom filter.</li>
 </ol>
 
-<p>When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more that one hash function (number of hash functions is <strong><em>k</em></strong>). Hashed input will mark ones in this initiated array.</p>
+<p>When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more than one hash function (number of hash functions is <strong><em>k</em></strong>). Hashed input will mark ones in this initiated array.</p>
 
-<p>The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value) of length <strong><em>m</em></strong>). Initially all values are set to zero, as shown below.
+<p>The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value of length <strong><em>m</em></strong>). Initially all values are set to zero, as shown below.
 <img src="/images/empty_bf.png" alt="Empty Bloom Filter" /></p>
 
 <p>To add an item to the bloom filter, we feed it to <strong><em>k</em></strong> different hash functions and set the bits to one at the resulting positions. As we can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the Bloom filter, we would use multiple hash functions, which would give us multiple indexes.
@@ -289,7 +289,7 @@ for example in our use case, the IP blacklist has originally a score attached to
 </footer>
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript" src="/js/main.js?1609190698942148964"></script>
+<script type="text/javascript" src="/js/main.js?1609193818657537380"></script>
 
 
     </div>

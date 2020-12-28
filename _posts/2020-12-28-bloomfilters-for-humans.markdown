@@ -26,10 +26,10 @@ There are two steps to use the Bloom filter:
   1. Adding elements to the Bloom filter.
   2. Checking if an element exists in the Bloom filter. 
 
-When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more that one hash function (number of hash functions is **_k_**). Hashed input will mark ones in this initiated array.
+When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more than one hash function (number of hash functions is **_k_**). Hashed input will mark ones in this initiated array.
 
 
-The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value) of length **_m_**). Initially all values are set to zero, as shown below.
+The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value of length **_m_**). Initially all values are set to zero, as shown below.
 ![Empty Bloom Filter](/images/empty_bf.png)
 
 To add an item to the bloom filter, we feed it to **_k_** different hash functions and set the bits to one at the resulting positions. As we can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the Bloom filter, we would use multiple hash functions, which would give us multiple indexes.

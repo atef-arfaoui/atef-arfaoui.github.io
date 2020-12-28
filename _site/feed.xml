@@ -5,8 +5,8 @@
     <description>Blog and Personal Website</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 28 Dec 2020 22:24:58 +0100</pubDate>
-    <lastBuildDate>Mon, 28 Dec 2020 22:24:58 +0100</lastBuildDate>
+    <pubDate>Mon, 28 Dec 2020 23:16:58 +0100</pubDate>
+    <lastBuildDate>Mon, 28 Dec 2020 23:16:58 +0100</lastBuildDate>
     <generator>Jekyll v3.9.0</generator>
     
       <item>
@@ -34,9 +34,9 @@ In other words, there is the possibility for &lt;strong&gt;false positive&lt;/st
   &lt;li&gt;Checking if an element exists in the Bloom filter.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more that one hash function (number of hash functions is &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt;). Hashed input will mark ones in this initiated array.&lt;/p&gt;
+&lt;p&gt;When we add elements to the Bloom Filter we use hash functions to seed the initial array. The element that we want to add to Bloom filter we can use more than one hash function (number of hash functions is &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt;). Hashed input will mark ones in this initiated array.&lt;/p&gt;
 
-&lt;p&gt;The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value) of length &lt;strong&gt;&lt;em&gt;m&lt;/em&gt;&lt;/strong&gt;). Initially all values are set to zero, as shown below.
+&lt;p&gt;The Bloom filter essentially consists of a bit-vector or bit-array (a list containing only either 0 or 1-bit value of length &lt;strong&gt;&lt;em&gt;m&lt;/em&gt;&lt;/strong&gt;). Initially all values are set to zero, as shown below.
 &lt;img src=&quot;/images/empty_bf.png&quot; alt=&quot;Empty Bloom Filter&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To add an item to the bloom filter, we feed it to &lt;strong&gt;&lt;em&gt;k&lt;/em&gt;&lt;/strong&gt; different hash functions and set the bits to one at the resulting positions. As we can see, in hash tables we would’ve used a single hash function, and, as a result, had only a single index as output. But in the case of the Bloom filter, we would use multiple hash functions, which would give us multiple indexes.
