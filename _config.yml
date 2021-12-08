@@ -1,6 +1,8 @@
 # Site settings
 title: Atef Arfaoui 
-description: 'Blog and Personal Website'
+description: 'Software Engineer.. I write Python code by day.. learning Go, Rust and React by night.. 
+I also do Data Engineering and working on ETL pipelines Orchestration with Airflow..
+Learning new things is my passion'
 url: 'https://atef.site'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
