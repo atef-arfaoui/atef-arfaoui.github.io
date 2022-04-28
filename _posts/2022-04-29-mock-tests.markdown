@@ -5,16 +5,16 @@ categories:
 tags: [python, pytest, unit-tests]
 ---
 When I first started writing unit tests in my early career, I thought it's boring task and tried to avoid them.
-I think unit tests should never be ignored and it's better to start write them before it's too late :) Once you get used to them and use the right tools it will be really enjoyable task.
+I think unit tests should never be ignored and it's better to start writiing them before it's too late :) Once you get used to them and use the right tools it will be really enjoyable task.
 
 One of the struggles to write unit tests is mocking functions; changing the behavior of external calls, dependencies, database connections, etc.
 So, I decided to write a blog series about unit testing and start with mocking functions.
 
 
 
-Let's start with a simple example: Write a script that interacts with AWS S3; it checks if there are dev buckets (check if any bucket starts with "dev-")
+Let's start with a simple example: A script that interacts with AWS S3 - It checks if there are dev buckets (dev buckets start with "dev-")
 
-### files structure
+### Files structure
 ```bash
 
 ├── main.py
@@ -25,9 +25,9 @@ Let's start with a simple example: Write a script that interacts with AWS S3; it
     └── s3_utils.py
 ```
 
-*main.py*
+_main.py_
 ```python
-    from utils.s3_utils import list_s3_buckets
+from utils.s3_utils import list_s3_buckets
 
 def check_dev_buckets() -> bool:
     """
