@@ -1,5 +1,5 @@
 ---
-title:  "Bloom filters for Humans (Draft)"
+title:  "Bloom filters for Humans"
 date:   2020-12-28 20:04:23
 categories: 
 tags: [data_structure]

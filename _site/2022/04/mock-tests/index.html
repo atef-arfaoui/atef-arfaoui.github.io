@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+
+  <title>Mock in Pytest</title>
+  <meta name="description" content="When I first started writing unit tests in my early career, I thought it’s boring task and tried to avoid them.
+I think unit tests should never be ignored and it’s better to start write them before it’s too late :) Once you get used to them and use the right tools it will be really enjoyable task.
+
+">
+  <meta name="author" content="Atef Arfaoui">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Mock in Pytest">
+  <meta name="twitter:description" content="When I first started writing unit tests in my early career, I thought it’s boring task and tried to avoid them.
+I think unit tests should never be ignored and it’s better to start write them before it’s too late :) Once you get used to them and use the right tools it will be really enjoyable task.
+
+">
+  
+  <meta name="twitter:creator" content="ArfaouiAtef">
+  
+  <meta name="twitter:image" content="/images/favicons/favicon-194x194.png" />
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Mock in Pytest">
+  <meta property="og:description" content="When I first started writing unit tests in my early career, I thought it’s boring task and tried to avoid them.
+I think unit tests should never be ignored and it’s better to start write them before it’s too late :) Once you get used to them and use the right tools it will be really enjoyable task.
+
+">
+  <meta property="og:image" content="/images/favicons/favicon-194x194.png" />
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/images/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/images/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/images/favicons/manifest.json">
+  <link rel="shortcut icon" href="/images/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#ffc40d">
+  <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  
+  <link rel="stylesheet" href="/css/main.css?1651186911969726199">
+  <link rel="canonical" href="http://localhost:4000/2022/04/mock-tests/">
+  <link rel="alternate" type="application/rss+xml" title="Atef Arfaoui" href="/feed.xml">
+</head>
+
+
+  <body>
+    <span class="mobile btn-mobile-menu">
+  <i class="icon icon-list btn-mobile-menu__icon"></i>
+  <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+</span>
+
+<header class="panel-cover" style="background-image: url(/images/cover.jpg)">
+  <div class="panel-main">
+
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+        <a href="/" title="link to home of Atef Arfaoui">
+          <img src="/images/profile.jpg" class="user-image" alt="My Profile Photo">
+          <h1 class="panel-cover__title panel-title">Atef Arfaoui</h1>
+        </a>
+        <hr class="panel-cover__divider">
+        <p class="panel-cover__description">Software Engineer.. I write Python code by day.. learning Go, Rust and React by night.. I also do Data Engineering and working on ETL pipelines Orchestration with Airflow.. Learning new things is my passion</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary">
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="link to Atef Arfaoui blog" class="blog-button">Blog</a></li>
+            </ul>
+          </nav>
+
+          <nav class="cover-navigation navigation--social">
+            <ul class="navigation">
+
+            
+              <!-- Twitter -->
+              <li class="navigation__item">
+                <a href="http://twitter.com/ArfaouiAtef" title="@ArfaouiAtef on Twitter" target="_blank">
+                  <i class="icon icon-social-twitter"></i>
+                  <span class="label">Twitter</span>
+                </a>
+              </li>
+            
+
+            
+
+            
+              <!-- LinkedIn -->
+              <li class="navigation__item">
+                <a href="https://www.linkedin.com/in/atefarfaoui" title="atefarfaoui on LinkedIn" target="_blank">
+                  <i class="icon icon-social-linkedin"></i>
+                  <span class="label">LinkedIn</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- GitHub -->
+              <li class="navigation__item">
+                <a href="https://www.github.com/arfaoui47" title="arfaoui47 on GitHub" target="_blank">
+                  <i class="icon icon-social-github"></i>
+                  <span class="label">GitHub</span>
+                </a>
+              </li>
+            
+
+            
+              <!-- Email -->
+              <li class="navigation__item">
+                <a href="mailto:arfatef@gmail.com" title="Email arfatef@gmail.com" target="_blank">
+                  <i class="icon icon-mail"></i>
+                  <span class="label">Email</span>
+                </a>
+              </li>
+            
+
+            <!-- RSS -->
+            <li class="navigation__item">
+              <a href="/Atef_Arfaoui_Resume.pdf" title="Resume" target="_blank">
+                <i class="icon icon-page-export-pdf"></i>
+                <span class="label">CV</span>
+              </a>
+            </li>
+
+            </ul>
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+      <div class="content-wrapper__inner">
+        <article class="post-container post-container--single">
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2022-04-28 22:04" class="post-meta__date date">28 Apr 2022</time>
+      
+      &#8226; <span class="post-meta__tags">on <a href="/tags/#python">python</a>, <a href="/tags/#pytest">pytest</a>, <a href="/tags/#unit-tests">unit-tests</a></span>
+      
+    </div>
+    <h1 class="post-title">Mock in Pytest</h1>
+  </header>
+
+  <section class="post">
+    <p>When I first started writing unit tests in my early career, I thought it’s boring task and tried to avoid them.
+I think unit tests should never be ignored and it’s better to start write them before it’s too late :) Once you get used to them and use the right tools it will be really enjoyable task.</p>
+
+<p>One of the struggles to write unit tests is mocking functions; changing the behavior of external calls, dependencies, database connections, etc.
+So, I decided to write a blog series about unit testing and start with mocking functions.</p>
+
+<p>Let’s start with a simple example: Write a script that interacts with AWS S3; it checks if there are dev buckets (check if any bucket starts with “dev-“)</p>
+
+<h3 id="files-structure">files structure</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+├── main.py
+├── tests
+│   ├── __init__.py
+│   └── test_utils.py
+└── utils
+    └── s3_utils.py
+</code></pre></div></div>
+
+<p><em>main.py</em></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">from</span> <span class="nn">utils.s3_utils</span> <span class="kn">import</span> <span class="n">list_s3_buckets</span>
+
+<span class="k">def</span> <span class="nf">check_dev_buckets</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="s">"""
+    Checks if the dev buckets exist 
+    """</span>
+    <span class="n">buckets</span> <span class="o">=</span> <span class="n">list_s3_buckets</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="n">buckets</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">bucket</span><span class="p">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">'dev-'</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>
+    
+    <span class="k">return</span> <span class="bp">False</span>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">check_dev_buckets</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'Dev buckets exist'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">'No dev buckets found'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><em>s3_utils.py</em></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">boto3</span> <span class="kn">import</span> <span class="n">client</span>
+
+
+<span class="n">S3_CLIENT</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s">'s3'</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">list_s3_buckets</span><span class="p">():</span>
+    <span class="s">"""
+    Lists all S3 buckets
+    """</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">S3_CLIENT</span><span class="p">.</span><span class="n">list_buckets</span><span class="p">()</span>
+    <span class="n">buckets</span> <span class="o">=</span> <span class="p">[</span><span class="n">bucket</span><span class="p">[</span><span class="s">'Name'</span><span class="p">]</span> <span class="k">for</span> <span class="n">bucket</span> <span class="ow">in</span> <span class="n">response</span><span class="p">[</span><span class="s">'Buckets'</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">buckets</span>
+</code></pre></div></div>
+
+<p><em>test_utils.py</em></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">mock</span>
+<span class="kn">from</span> <span class="nn">main</span> <span class="kn">import</span> <span class="n">check_dev_buckets</span>
+
+
+<span class="k">def</span> <span class="nf">test_check_dev_buckets</span><span class="p">():</span>
+    <span class="k">with</span> <span class="n">mock</span><span class="p">.</span><span class="n">patch</span><span class="p">(</span><span class="s">'main.list_s3_buckets'</span><span class="p">)</span> <span class="k">as</span> <span class="n">mock_list_s3_buckets</span><span class="p">:</span>
+        <span class="n">mock_list_s3_buckets</span><span class="p">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">[</span><span class="s">'dev-bucket-1'</span><span class="p">,</span> <span class="s">'dev-bucket-2'</span><span class="p">]</span>
+        <span class="k">assert</span> <span class="n">check_dev_buckets</span><span class="p">()</span> 
+</code></pre></div></div>
+<h3 id="️-note">⚠️ Note</h3>
+<p>in mock.patch() you need to pass the function where it’s imported (used) not wehre it’s defined. it should be <code class="language-plaintext highlighter-rouge">main.list_s3_buckets</code> and not <code class="language-plaintext highlighter-rouge">utils.s3_utils.list_s3_buckets</code></p>
+
+  </section>
+  
+</article>
+
+
+
+      </div>
+
+      <footer class="footer">
+  <span class="footer__copyright">&copy; 2022 Atef Arfaoui. All rights reserved.</span>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/main.js?1651186911969726199"></script>
+
+
+    </div>
+  </body>
+</html>
