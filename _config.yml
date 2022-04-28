@@ -1,8 +1,6 @@
 # Site settings
 title: Atef Arfaoui 
-description: 'Software Engineer.. I write Python code by day.. learning Go, Rust and React by night.. 
-I also do Data Engineering and working on ETL pipelines Orchestration with Airflow..
-Learning new things is my passion'
+description: 'Software / Data Engineer - 5+ years Python/API developer; Django, Flask, FastAPI...  Pipeline engineering with Airflow/Luigi/AWS...'
 url: 'https://atef.site'
 baseurl: ''
 # google_analytics: 'UA-XXXXXX-X'
